@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: lhim6x0xa-python
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: lhim6x0xa-python 
+  name: lhim6x0xa-python
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: lhim6x0xa-python
+    weight: 100 

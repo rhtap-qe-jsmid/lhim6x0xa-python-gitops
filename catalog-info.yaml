@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: lhim6x0xa-python-gitops
+  description: This is GitOps manifest for lhim6x0xa-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: lhim6x0xa-python
+    janus-idp.io/tekton: lhim6x0xa-python
+    backstage.io/kubernetes-id: lhim6x0xa-python 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:lhim6x0xa-python
